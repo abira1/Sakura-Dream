@@ -175,16 +175,16 @@ const Home = () => {
 
       {/* Hero Section with Video Background */}
       <section id="hero" className="hero-section relative h-screen overflow-hidden">
-        {/* YouTube Video Background */}
+        {/* Video Background */}
         <div className="absolute inset-0 w-full h-full">
-          <iframe
+          <video
             ref={videoRef}
-            className="absolute top-1/2 left-1/2 w-[177.77vh] h-[56.25vw] min-w-full min-h-full transform -translate-x-1/2 -translate-y-1/2"
-            src="https://www.youtube.com/embed/oylirMJXN08?si=cU8Zk1kZP_IFC5Uu&controls=0&start=7&autoplay=1&mute=1&loop=1&playlist=oylirMJXN08&enablejsapi=1"
-            title="Cafe Background"
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
+            className="absolute top-1/2 left-1/2 w-[177.77vh] h-[56.25vw] min-w-full min-h-full transform -translate-x-1/2 -translate-y-1/2 object-cover"
+            src="https://customer-assets.emergentagent.com/job_5b55854e-6f8c-4ddb-a961-92a2d52368ba/artifacts/u71x998s_Background.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
           />
           <div className="absolute inset-0 bg-black/30" />
         </div>
