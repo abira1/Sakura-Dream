@@ -31,20 +31,11 @@ const Home = () => {
     guests: 2
   });
 
-  // Scroll handler for video frame control
+  // Scroll handler for scroll position tracking
   useEffect(() => {
     const handleScroll = () => {
       const position = window.pageYOffset;
       setScrollPosition(position);
-
-      // Control video playback based on scroll
-      if (videoRef.current) {
-        const scrollPercent = position / (document.documentElement.scrollHeight - window.innerHeight);
-        const videoDuration = videoRef.current.duration || 0;
-        if (videoDuration > 0) {
-          videoRef.current.currentTime = scrollPercent * videoDuration;
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
