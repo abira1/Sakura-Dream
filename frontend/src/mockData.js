@@ -4,42 +4,42 @@ export const menuItems = [
     name: "Matcha Latte",
     description: "Premium ceremonial matcha with steamed milk",
     price: "$6.50",
-    image: "🍵"
+    icon: "Coffee"
   },
   {
     id: 2,
     name: "Sakura Tea",
     description: "Delicate cherry blossom infused green tea",
     price: "$5.50",
-    image: "🌸"
+    icon: "Flower2"
   },
   {
     id: 3,
     name: "Hojicha Latte",
     description: "Roasted green tea with creamy foam",
     price: "$6.00",
-    image: "☕"
+    icon: "Cup"
   },
   {
     id: 4,
     name: "Yuzu Cheesecake",
     description: "Light Japanese citrus cheesecake",
     price: "$7.50",
-    image: "🍰"
+    icon: "Cake"
   },
   {
     id: 5,
     name: "Mochi Trio",
     description: "Matcha, strawberry, and vanilla mochi",
     price: "$8.00",
-    image: "🍡"
+    icon: "Cookie"
   },
   {
     id: 6,
     name: "Taiyaki",
     description: "Fish-shaped waffle with red bean filling",
     price: "$5.00",
-    image: "🐟"
+    icon: "Fish"
   }
 ];
 
