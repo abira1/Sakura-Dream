@@ -198,7 +198,7 @@ const Home = () => {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" ref={menuSectionRef} className="menu-section py-12 sm:py-20 px-4 sm:px-8 bg-gradient-to-b from-cream via-amber-50 to-cream relative overflow-hidden">
+      <section id="menu" ref={menuSectionRef} className="menu-section py-16 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cream via-amber-50 to-cream relative overflow-hidden">
         {/* Japanese Pattern Background */}
         <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF69B4' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -207,71 +207,79 @@ const Home = () => {
         
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Traditional Japanese Header */}
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
             <div className="inline-block relative">
-              <h2 className="text-4xl sm:text-6xl font-bold text-center mb-2 vintage-text relative">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-3 vintage-text relative">
                 <span className="japanese-accent">お品書き</span>
               </h2>
-              <p className="text-2xl sm:text-4xl font-serif text-gray-800 mb-3">Menu</p>
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-sakura-pink to-transparent mx-auto"></div>
+              <p className="text-xl sm:text-3xl md:text-4xl font-serif text-gray-800 mb-4">Menu</p>
+              <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-sakura-pink to-transparent mx-auto"></div>
             </div>
-            <p className="text-center text-gray-700 mt-6 text-base sm:text-lg font-light italic">伝統の味わい • Traditional Flavors</p>
+            <p className="text-center text-gray-700 mt-6 sm:mt-8 text-sm sm:text-base md:text-lg font-light italic max-w-2xl mx-auto px-4">伝統の味わい • Traditional Flavors</p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7 lg:gap-8">
             {menuItems.map((item, index) => {
               const IconComponent = iconComponents[item.icon];
               return (
                 <div
                   key={item.id}
                   data-item-id={item.id}
-                  className={`menu-card-vintage group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg p-6 sm:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 active:scale-95 transition-all duration-500 border border-amber-200 ${
+                  className={`menu-card menu-card-vintage group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl sm:rounded-2xl p-5 sm:p-7 md:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 active:scale-100 transition-all duration-700 ease-out border border-amber-200 cursor-pointer ${
                     visibleItems.includes(String(item.id)) ? 'fade-in-visible' : 'fade-in-hidden'
                   }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
+                  style={{ 
+                    transitionDelay: `${index * 120}ms`,
+                    willChange: 'transform, opacity'
+                  }}
                 >
-                  {/* Corner Decorations */}
-                  <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-sakura-pink/40 rounded-tl"></div>
-                  <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-sakura-pink/40 rounded-tr"></div>
-                  <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-sakura-pink/40 rounded-bl"></div>
-                  <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-sakura-pink/40 rounded-br"></div>
+                  {/* Corner Decorations - Responsive */}
+                  <div className="absolute top-2 sm:top-3 left-2 sm:left-3 w-5 sm:w-6 h-5 sm:h-6 border-t-2 border-l-2 border-sakura-pink/40 rounded-tl transition-all duration-300 group-hover:border-sakura-pink/70"></div>
+                  <div className="absolute top-2 sm:top-3 right-2 sm:right-3 w-5 sm:w-6 h-5 sm:h-6 border-t-2 border-r-2 border-sakura-pink/40 rounded-tr transition-all duration-300 group-hover:border-sakura-pink/70"></div>
+                  <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 w-5 sm:w-6 h-5 sm:h-6 border-b-2 border-l-2 border-sakura-pink/40 rounded-bl transition-all duration-300 group-hover:border-sakura-pink/70"></div>
+                  <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-3 w-5 sm:w-6 h-5 sm:h-6 border-b-2 border-r-2 border-sakura-pink/40 rounded-br transition-all duration-300 group-hover:border-sakura-pink/70"></div>
                   
                   {/* Vintage Paper Texture Overlay */}
-                  <div className="absolute inset-0 opacity-20 pointer-events-none rounded-lg" style={{
+                  <div className="absolute inset-0 opacity-20 pointer-events-none rounded-xl sm:rounded-2xl" style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
                   }}></div>
                   
+                  {/* Gradient Glow on Hover */}
+                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-sakura-pink/10 via-transparent to-rose-300/10"></div>
+                  
                   <div className="relative z-10">
-                    <div className="flex justify-center mb-5">
-                      <div className="relative">
-                        {IconComponent && <IconComponent size={56} className="text-rose-400 sm:w-[64px] sm:h-[64px] filter drop-shadow-md" strokeWidth={1.5} />}
+                    <div className="flex justify-center mb-4 sm:mb-5 md:mb-6">
+                      <div className="relative transform group-hover:scale-110 transition-transform duration-500 ease-out">
+                        {IconComponent && <IconComponent size={48} className="text-rose-400 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 filter drop-shadow-md group-hover:drop-shadow-xl transition-all duration-500" strokeWidth={1.5} />}
                         {/* Decorative circle behind icon */}
-                        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sakura-pink/20 to-rose-300/20 rounded-full blur-xl scale-150"></div>
+                        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sakura-pink/20 to-rose-300/20 rounded-full blur-xl scale-150 group-hover:scale-[2] transition-transform duration-700"></div>
                       </div>
                     </div>
                     
-                    <h3 className="text-xl sm:text-2xl font-bold mb-3 text-center text-gray-800 tracking-wide" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-center text-gray-800 tracking-wide group-hover:text-rose-700 transition-colors duration-300" style={{ fontFamily: "'Noto Serif JP', serif" }}>
                       {item.name}
                     </h3>
                     
-                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-sakura-pink to-transparent mx-auto mb-4"></div>
+                    <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-transparent via-sakura-pink to-transparent mx-auto mb-3 sm:mb-4 group-hover:w-20 sm:group-hover:w-24 transition-all duration-500"></div>
                     
-                    <p className="text-sm sm:text-base text-gray-700 mb-5 text-center leading-relaxed font-light">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-4 sm:mb-5 md:mb-6 text-center leading-relaxed font-light px-2 group-hover:text-gray-800 transition-colors duration-300">
                       {item.description}
                     </p>
                     
                     <div className="text-center">
-                      <div className="inline-block bg-white/60 px-6 py-2 rounded-full border border-sakura-pink/30 shadow-sm">
-                        <span className="text-xl sm:text-2xl font-bold text-rose-600" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                      <div className="inline-block bg-white/60 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full border border-sakura-pink/30 shadow-sm group-hover:shadow-md group-hover:bg-white/80 group-hover:border-sakura-pink/50 transition-all duration-500">
+                        <span className="text-lg sm:text-xl md:text-2xl font-bold text-rose-600 group-hover:text-rose-700 transition-colors duration-300" style={{ fontFamily: "'Noto Serif JP', serif" }}>
                           {item.price}
                         </span>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Hover Sakura Petal Effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                    <div className="absolute top-4 right-8 text-4xl animate-float">🌸</div>
+                  {/* Hover Sakura Petal Effects - Multiple */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none overflow-hidden rounded-xl sm:rounded-2xl">
+                    <div className="absolute top-4 right-8 text-2xl sm:text-3xl md:text-4xl animate-float">🌸</div>
+                    <div className="absolute bottom-6 left-6 text-xl sm:text-2xl animate-float-delayed">🌸</div>
+                    <div className="absolute top-1/2 left-1/4 text-lg sm:text-xl animate-float-slow opacity-70">🌸</div>
                   </div>
                 </div>
               );
