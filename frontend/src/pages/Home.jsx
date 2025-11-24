@@ -13,7 +13,16 @@ const Home = () => {
   const videoRef = useRef(null);
   const menuSectionRef = useRef(null);
   const reserveSectionRef = useRef(null);
-  const { toast } = useToast();
+  
+  // Icon mapping
+  const iconComponents = {
+    Coffee,
+    Flower2,
+    Cup,
+    Cake,
+    Cookie,
+    Fish
+  };
 
   const [formData, setFormData] = useState({
     name: '',
