@@ -67,10 +67,11 @@ h1, h2, h3 {
   }
 }
 
-/* Vintage Japanese Menu Styling */
+/* Vintage Japanese Menu Styling - Enhanced */
 .menu-card-vintage {
   background: linear-gradient(135deg, #fef3e2 0%, #fae8d4 100%);
   position: relative;
+  will-change: transform;
 }
 
 .menu-card-vintage::before {
@@ -82,6 +83,11 @@ h1, h2, h3 {
     radial-gradient(circle at 80% 70%, rgba(135, 206, 235, 0.1) 0%, transparent 50%);
   border-radius: inherit;
   pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.menu-card-vintage:hover::before {
+  opacity: 1.5;
 }
 
 .vintage-text {
