@@ -290,7 +290,7 @@ const Home = () => {
           {/* Traditional Footer Decoration */}
           <div className="mt-16 flex justify-center">
             <div className="text-center">
-              <div className="text-6xl mb-2">🍵</div>
+              <Coffee size={64} className="text-rose-400 mx-auto mb-3 opacity-60" strokeWidth={1.5} />
               <p className="text-sm text-gray-600 font-light italic">Served with tradition and care</p>
             </div>
           </div>
