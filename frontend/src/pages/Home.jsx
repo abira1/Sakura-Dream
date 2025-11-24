@@ -174,21 +174,26 @@ const Home = () => {
           <p className="text-center text-gray-600 mb-12 text-lg">Handcrafted with love and tradition</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {menuItems.map((item, index) => (
-              <div
-                key={item.id}
-                data-item-id={item.id}
-                className={`menu-card bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border-2 border-sakura-pink/20 ${
-                  visibleItems.includes(String(item.id)) ? 'fade-in-visible' : 'fade-in-hidden'
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="text-6xl mb-4 text-center">{item.image}</div>
-                <h3 className="text-2xl font-bold mb-2 text-sky-blue">{item.name}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <div className="text-2xl font-bold text-sakura-pink">{item.price}</div>
-              </div>
-            ))}
+            {menuItems.map((item, index) => {
+              const IconComponent = iconComponents[item.icon];
+              return (
+                <div
+                  key={item.id}
+                  data-item-id={item.id}
+                  className={`menu-card bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 border-2 border-sakura-pink/20 ${
+                    visibleItems.includes(String(item.id)) ? 'fade-in-visible' : 'fade-in-hidden'
+                  }`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <div className="flex justify-center mb-4">
+                    {IconComponent && <IconComponent size={60} className="text-sakura-pink" />}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2 text-sky-blue">{item.name}</h3>
+                  <p className="text-gray-600 mb-4">{item.description}</p>
+                  <div className="text-2xl font-bold text-sakura-pink">{item.price}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
