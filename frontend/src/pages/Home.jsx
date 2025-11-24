@@ -108,12 +108,14 @@ const Home = () => {
   return (
     <div className="sakura-cafe">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-8 py-4 backdrop-blur-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="logo text-2xl font-bold text-sakura-pink tracking-wide">
-            桜 Sakura Dream Cafe
+          <div className="logo text-lg sm:text-2xl font-bold text-sakura-pink tracking-wide whitespace-nowrap">
+            桜 Sakura Dream
           </div>
-          <nav className="flex gap-8">
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex gap-8">
             <button
               onClick={() => scrollToSection('hero')}
               className="text-cream hover:text-sakura-pink transition-colors duration-300"
@@ -133,7 +135,42 @@ const Home = () => {
               Reserve
             </button>
           </nav>
+          
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-cream hover:text-sakura-pink transition-colors duration-300 p-2"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
+          </button>
         </div>
+        
+        {/* Mobile Navigation Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-t border-sakura-pink/20">
+            <nav className="flex flex-col p-4">
+              <button
+                onClick={() => scrollToSection('hero')}
+                className="text-cream hover:text-sakura-pink transition-colors duration-300 py-3 text-left"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => scrollToSection('menu')}
+                className="text-cream hover:text-sakura-pink transition-colors duration-300 py-3 text-left"
+              >
+                Menu
+              </button>
+              <button
+                onClick={() => scrollToSection('reserve')}
+                className="text-cream hover:text-sakura-pink transition-colors duration-300 py-3 text-left"
+              >
+                Reserve
+              </button>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section with Video Background */}
