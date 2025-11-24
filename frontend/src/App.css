@@ -98,24 +98,36 @@ h1, h2, h3 {
   filter: drop-shadow(0 2px 4px rgba(255, 183, 197, 0.3));
 }
 
-/* Floating Animation for Sakura */
+/* Floating Animation for Sakura - Enhanced */
 @keyframes float {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
+    opacity: 1;
   }
   25% {
-    transform: translateY(-10px) rotate(5deg);
+    transform: translateY(-12px) rotate(8deg);
+    opacity: 0.9;
   }
   50% {
-    transform: translateY(-5px) rotate(-5deg);
+    transform: translateY(-8px) rotate(-6deg);
+    opacity: 0.8;
   }
   75% {
-    transform: translateY(-15px) rotate(3deg);
+    transform: translateY(-18px) rotate(5deg);
+    opacity: 0.9;
   }
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 4.5s ease-in-out infinite 0.5s;
+}
+
+.animate-float-slow {
+  animation: float 5s ease-in-out infinite 1s;
 }
 
 /* Traditional Japanese Border Pattern */
