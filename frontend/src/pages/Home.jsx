@@ -18,7 +18,7 @@ const Home = () => {
   const iconComponents = {
     Coffee,
     Flower2,
-    Cup,
+    Cup: CupSoda,
     Cake,
     Cookie,
     Fish
