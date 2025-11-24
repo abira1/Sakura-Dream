@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { menuItems, mockReservation } from '../mockData';
-import { Instagram, Facebook, Twitter, Mail, Phone, Coffee, Flower2, CupSoda, Cake, Cookie, Fish } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Mail, Phone, Coffee, Flower2, CupSoda, Cake, Cookie, Fish, Menu as MenuIcon, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
@@ -10,6 +10,7 @@ import { toast as sonnerToast } from 'sonner';
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [visibleItems, setVisibleItems] = useState([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const videoRef = useRef(null);
   const menuSectionRef = useRef(null);
   const reserveSectionRef = useRef(null);
