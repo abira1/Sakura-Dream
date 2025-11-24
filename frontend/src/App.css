@@ -150,10 +150,62 @@ body::before {
   }
   
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
   }
   
   .menu-section, .reserve-section {
     padding: 3rem 1rem;
+  }
+  
+  .menu-card {
+    padding: 1.5rem;
+  }
+  
+  /* Improve touch targets for mobile */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing for form elements on mobile */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .logo {
+    font-size: 1rem;
+  }
+}
+
+/* Smooth scrolling for all devices */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Touch-friendly hover states */
+@media (hover: none) and (pointer: coarse) {
+  .menu-card:hover {
+    transform: none;
+  }
+  
+  .menu-card:active {
+    transform: scale(0.98);
+  }
+  
+  button:hover::before {
+    display: none;
   }
 }
