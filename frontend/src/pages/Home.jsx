@@ -238,12 +238,12 @@ const Home = () => {
       </section>
 
       {/* Reserve Section */}
-      <section id="reserve" ref={reserveSectionRef} className="reserve-section py-20 px-8 bg-gradient-to-b from-cream to-sky-blue/10">
+      <section id="reserve" ref={reserveSectionRef} className="reserve-section py-12 sm:py-20 px-4 sm:px-8 bg-gradient-to-b from-cream to-sky-blue/10">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-4 text-sky-blue">Reserve a Table</h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">Experience the magic in person</p>
+          <h2 className="text-3xl sm:text-5xl font-bold text-center mb-3 sm:mb-4 text-sky-blue">Reserve a Table</h2>
+          <p className="text-center text-gray-600 mb-8 sm:mb-12 text-base sm:text-lg">Experience the magic in person</p>
           
-          <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-xl border-2 border-sakura-pink/20">
+          <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-sakura-pink/20">
             <div className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-sky-blue font-semibold">Name</Label>
