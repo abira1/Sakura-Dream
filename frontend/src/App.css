@@ -236,7 +236,7 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Responsive Design */
+/* Responsive Design - Enhanced */
 @media (max-width: 768px) {
   header nav {
     gap: 1rem;
@@ -259,6 +259,15 @@ body::before {
     padding: 1.5rem;
   }
   
+  /* Optimize menu card animations for mobile */
+  .menu-card:hover {
+    transform: translateY(-8px) scale(1.03);
+  }
+  
+  .fade-in-visible {
+    animation-duration: 0.8s;
+  }
+  
   /* Improve touch targets for mobile */
   button, a {
     min-height: 44px;
@@ -271,6 +280,17 @@ body::before {
   }
 }
 
+/* Tablet specific optimizations */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .menu-card {
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .menu-card:hover {
+    transform: translateY(-10px) scale(1.04);
+  }
+}
+
 @media (max-width: 480px) {
   .hero-content h1 {
     font-size: 2rem;
@@ -278,6 +298,15 @@ body::before {
   
   .logo {
     font-size: 1rem;
+  }
+  
+  /* Reduce animation intensity on small screens */
+  .menu-card:active {
+    transform: scale(0.98);
+  }
+  
+  .fade-in-hidden {
+    transform: translateY(30px) scale(0.97);
   }
 }
 
