@@ -289,7 +289,7 @@ const Home = () => {
               
               <Button
                 type="submit"
-                className="w-full bg-sakura-pink hover:bg-sakura-pink/90 text-white py-6 text-lg rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                className="w-full bg-sakura-pink hover:bg-sakura-pink/90 text-white py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 Confirm Reservation
               </Button>
