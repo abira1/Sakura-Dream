@@ -207,10 +207,10 @@ const Home = () => {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" ref={menuSectionRef} className="menu-section py-20 px-8 bg-cream">
+      <section id="menu" ref={menuSectionRef} className="menu-section py-12 sm:py-20 px-4 sm:px-8 bg-cream">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-4 text-sky-blue">Our Menu</h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">Handcrafted with love and tradition</p>
+          <h2 className="text-3xl sm:text-5xl font-bold text-center mb-3 sm:mb-4 text-sky-blue">Our Menu</h2>
+          <p className="text-center text-gray-600 mb-8 sm:mb-12 text-base sm:text-lg">Handcrafted with love and tradition</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {menuItems.map((item, index) => {
