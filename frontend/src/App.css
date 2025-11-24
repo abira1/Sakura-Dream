@@ -317,17 +317,57 @@ body::before {
   }
 }
 
-/* Touch-friendly hover states */
+/* Touch-friendly hover states - Enhanced */
 @media (hover: none) and (pointer: coarse) {
   .menu-card:hover {
     transform: none;
   }
   
   .menu-card:active {
-    transform: scale(0.98);
+    transform: scale(0.96) translateY(2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
   }
   
   button:hover::before {
     display: none;
+  }
+  
+  /* Disable complex animations on touch devices for performance */
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow {
+    animation: none;
+  }
+}
+
+/* Performance optimizations */
+.menu-card,
+.menu-card-vintage {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .menu-card:hover {
+    transform: none;
   }
 }
