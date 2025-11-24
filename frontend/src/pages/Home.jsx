@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { menuItems, mockReservation } from '../mockData';
-import { Instagram, Facebook, Twitter, Mail, Phone } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Mail, Phone, Coffee, Flower2, Cup, Cake, Cookie, Fish } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Label } from '../components/ui/label';
 import { useToast } from '../hooks/use-toast';
+import { toast as sonnerToast } from 'sonner';
 
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
