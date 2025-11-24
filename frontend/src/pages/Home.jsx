@@ -78,6 +78,7 @@ const Home = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setMobileMenuOpen(false); // Close mobile menu after navigation
   };
 
   const handleInputChange = (e) => {
