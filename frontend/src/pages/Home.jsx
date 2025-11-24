@@ -207,32 +207,92 @@ const Home = () => {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" ref={menuSectionRef} className="menu-section py-12 sm:py-20 px-4 sm:px-8 bg-cream">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-5xl font-bold text-center mb-3 sm:mb-4 text-sky-blue">Our Menu</h2>
-          <p className="text-center text-gray-600 mb-8 sm:mb-12 text-base sm:text-lg">Handcrafted with love and tradition</p>
+      <section id="menu" ref={menuSectionRef} className="menu-section py-12 sm:py-20 px-4 sm:px-8 bg-gradient-to-b from-cream via-amber-50 to-cream relative overflow-hidden">
+        {/* Japanese Pattern Background */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF69B4' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '30px 30px'
+        }}></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Traditional Japanese Header */}
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-block relative">
+              <h2 className="text-4xl sm:text-6xl font-bold text-center mb-2 vintage-text relative">
+                <span className="japanese-accent">お品書き</span>
+              </h2>
+              <p className="text-2xl sm:text-4xl font-serif text-gray-800 mb-3">Menu</p>
+              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-sakura-pink to-transparent mx-auto"></div>
+            </div>
+            <p className="text-center text-gray-700 mt-6 text-base sm:text-lg font-light italic">伝統の味わい • Traditional Flavors</p>
+          </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {menuItems.map((item, index) => {
               const IconComponent = iconComponents[item.icon];
               return (
                 <div
                   key={item.id}
                   data-item-id={item.id}
-                  className={`menu-card bg-white rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 active:scale-95 transition-all duration-500 border-2 border-sakura-pink/20 ${
+                  className={`menu-card-vintage group relative bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg p-6 sm:p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 active:scale-95 transition-all duration-500 border border-amber-200 ${
                     visibleItems.includes(String(item.id)) ? 'fade-in-visible' : 'fade-in-hidden'
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex justify-center mb-4">
-                    {IconComponent && <IconComponent size={48} className="text-sakura-pink sm:w-[60px] sm:h-[60px]" />}
+                  {/* Corner Decorations */}
+                  <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-sakura-pink/40 rounded-tl"></div>
+                  <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-sakura-pink/40 rounded-tr"></div>
+                  <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-sakura-pink/40 rounded-bl"></div>
+                  <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-sakura-pink/40 rounded-br"></div>
+                  
+                  {/* Vintage Paper Texture Overlay */}
+                  <div className="absolute inset-0 opacity-20 pointer-events-none rounded-lg" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+                  }}></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex justify-center mb-5">
+                      <div className="relative">
+                        {IconComponent && <IconComponent size={56} className="text-rose-400 sm:w-[64px] sm:h-[64px] filter drop-shadow-md" strokeWidth={1.5} />}
+                        {/* Decorative circle behind icon */}
+                        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sakura-pink/20 to-rose-300/20 rounded-full blur-xl scale-150"></div>
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl sm:text-2xl font-bold mb-3 text-center text-gray-800 tracking-wide" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                      {item.name}
+                    </h3>
+                    
+                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-sakura-pink to-transparent mx-auto mb-4"></div>
+                    
+                    <p className="text-sm sm:text-base text-gray-700 mb-5 text-center leading-relaxed font-light">
+                      {item.description}
+                    </p>
+                    
+                    <div className="text-center">
+                      <div className="inline-block bg-white/60 px-6 py-2 rounded-full border border-sakura-pink/30 shadow-sm">
+                        <span className="text-xl sm:text-2xl font-bold text-rose-600" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+                          {item.price}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-2 text-sky-blue">{item.name}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 mb-4">{item.description}</p>
-                  <div className="text-xl sm:text-2xl font-bold text-sakura-pink">{item.price}</div>
+                  
+                  {/* Hover Sakura Petal Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className="absolute top-4 right-8 text-4xl animate-float">🌸</div>
+                  </div>
                 </div>
               );
             })}
+          </div>
+          
+          {/* Traditional Footer Decoration */}
+          <div className="mt-16 flex justify-center">
+            <div className="text-center">
+              <div className="text-6xl mb-2">🍵</div>
+              <p className="text-sm text-gray-600 font-light italic">Served with tradition and care</p>
+            </div>
           </div>
         </div>
       </section>
