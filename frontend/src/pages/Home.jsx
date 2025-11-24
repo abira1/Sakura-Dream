@@ -299,39 +299,39 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-sky-blue/20 py-12 px-8">
+      <footer className="bg-sky-blue/20 py-8 sm:py-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
             <div className="text-center md:text-left">
-              <div className="text-2xl font-bold text-sakura-pink mb-2">桜 Sakura Dream Cafe</div>
-              <p className="text-gray-600">A taste of Japanese serenity</p>
+              <div className="text-xl sm:text-2xl font-bold text-sakura-pink mb-2">桜 Sakura Dream Cafe</div>
+              <p className="text-sm sm:text-base text-gray-600">A taste of Japanese serenity</p>
             </div>
             
-            <div className="flex gap-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-sky-blue hover:text-sakura-pink transition-colors duration-300">
-                <Instagram size={28} />
+            <div className="flex gap-6 sm:gap-8">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-sky-blue hover:text-sakura-pink transition-colors duration-300 p-2">
+                <Instagram size={24} className="sm:w-7 sm:h-7" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-sky-blue hover:text-sakura-pink transition-colors duration-300">
-                <Facebook size={28} />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-sky-blue hover:text-sakura-pink transition-colors duration-300 p-2">
+                <Facebook size={24} className="sm:w-7 sm:h-7" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-sky-blue hover:text-sakura-pink transition-colors duration-300">
-                <Twitter size={28} />
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-sky-blue hover:text-sakura-pink transition-colors duration-300 p-2">
+                <Twitter size={24} className="sm:w-7 sm:h-7" />
               </a>
             </div>
             
-            <div className="flex flex-col gap-2 text-gray-600">
-              <div className="flex items-center gap-2">
-                <Mail size={20} className="text-sky-blue" />
-                <span>hello@sakuradream.cafe</span>
+            <div className="flex flex-col gap-2 text-center md:text-left text-sm sm:text-base text-gray-600">
+              <div className="flex items-center justify-center md:justify-start gap-2">
+                <Mail size={18} className="text-sky-blue sm:w-5 sm:h-5" />
+                <span className="break-all">hello@sakuradream.cafe</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone size={20} className="text-sky-blue" />
+              <div className="flex items-center justify-center md:justify-start gap-2">
+                <Phone size={18} className="text-sky-blue sm:w-5 sm:h-5" />
                 <span>+1 (555) 123-4567</span>
               </div>
             </div>
           </div>
           
-          <div className="text-center mt-8 pt-8 border-t border-sky-blue/30 text-gray-500">
+          <div className="text-center mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-sky-blue/30 text-xs sm:text-sm text-gray-500">
             © 2025 Sakura Dream Cafe. All rights reserved.
           </div>
         </div>
