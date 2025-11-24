@@ -191,15 +191,15 @@ const Home = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 hero-content">
-          <h1 className="text-6xl md:text-8xl font-bold text-cream mb-4 tracking-wider">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-cream mb-4 tracking-wider leading-tight">
             桜 Dream Cafe
           </h1>
-          <p className="text-xl md:text-2xl text-cream/90 mb-8 max-w-2xl">
+          <p className="text-base sm:text-xl md:text-2xl text-cream/90 mb-8 max-w-2xl px-4">
             Where tranquility meets flavor in every sip
           </p>
           <Button
             onClick={() => scrollToSection('menu')}
-            className="bg-sakura-pink hover:bg-sakura-pink/90 text-white px-8 py-6 text-lg rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+            className="bg-sakura-pink hover:bg-sakura-pink/90 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300"
           >
             View Menu
           </Button>
