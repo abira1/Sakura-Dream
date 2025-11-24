@@ -88,28 +88,18 @@ const Home = () => {
     e.preventDefault();
     
     if (!formData.name || !formData.date || !formData.guests) {
-      toast({
-        title: "Please fill all fields",
-        variant: "destructive"
-      });
+      sonnerToast.error("Please fill all fields");
       return;
     }
 
     try {
       const result = await mockReservation(formData);
       if (result.success) {
-        toast({
-          title: "Reservation Confirmed!",
-          description: `Table for ${formData.guests} booked for ${formData.date}`
-        });
+        sonnerToast.success(`Reservation Confirmed! Table for ${formData.guests} booked for ${formData.date}`);
         setFormData({ name: '', date: '', guests: 2 });
       }
     } catch (error) {
-      toast({
-        title: "Reservation Failed",
-        description: "Please try again later",
-        variant: "destructive"
-      });
+      sonnerToast.error("Reservation Failed. Please try again later");
     }
   };
 
